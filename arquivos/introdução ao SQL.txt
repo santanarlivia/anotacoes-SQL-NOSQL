@@ -1,0 +1,60 @@
+introdução ao SQL
+
+o que é Statement? é o status no momento do bd
+através do Select Statement a gente tem esse status
+
+cláusulas SQL é uma estrução, algumas são
+obrigatórias para funcionar. (geralmente o MySQL avisa)
+
+Termos - SQL 
+idetificador, operador, constante e expressão
+
+
+TIPOS DE DADOS
+
+caracteres - fixo e variável
+char - fixo 
+varchar - variável
+
+tipo texto - para xml, emails e documentos
+mediumtext
+longtext
+
+dados temporais
+date
+datetime
+year
+time
+
+Constraint: Restrições que previnem redundâncias.
+Not Null - não pode ser nulo
+PK e SK 
+DEFAULT - quando você for colocar 
+um valor padrão usa-se default
+CHECK - vc usa pra checar qual 
+o dominío é o atributo. DOMAIN.
+DELETE - ele remove uma instância ou algum registro
+do BD. 
+
+a PK a gente define da hr de criar a tabela
+UNIQUE quando um atributo  é exclusivo.
+
+Quando tem uma violação de constrain, é ativado
+um gatilho.
+
+a gente pode criar um Check pra evitar esse tipo
+de fraude.
+
+Queries - ex
+SELECT DISTINCT Salary FROM employee
+
+Mapping: O select vai fazer um mapeamento
+SELECT <lista de atribuitos> FROM <tabela> WHERE <condição>
+
+Operadores matemáticos - os mesmo de sempre
+boleanos: AND, OR, XOR (ou excluisivo) <NOT
+Lógico: TRUE E FALSE
+
+DML - subconjunto do SQL
+Mais ultilizado
+INSERT INTO <table> (<Lista de atributos) VALUES (lista de valores)

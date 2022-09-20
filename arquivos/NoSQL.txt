@@ -1,0 +1,103 @@
+Banco de Dados - NOSQL
+(Not Only SQL) 
+
+O que levou a criação dos BD's NOSQL?
+
+O condicionamento de dados dos NoSQL, são feitos
+todas as vezes, ao contrário do bancos SQL. Não existe
+necessidade de um schema, um script com muito detalhes.
+
+As transações no BD NoSQl não tem conceito, só no Mongo DB
+que tem a BASE (que são: prioridade e disponiblização
+de dados, que eles não precisem ser consistêntes o tempo
+todo, apenas em um tempo determinado.
+
+Tipos de banco NoSQL
+
+- Orientado a grafos: os grafos são estruturas matemáticas
+compostas de nós e vérticies, sendo os nós os dados e vértices
+os relacionamentos. PRATICA no Neo4j
+Quando o nó é de uma label diferente, muda a cor da bolinha
+para mostrar tudo
+MATCH(todos) RETURN todos;
+
+para colocar o lula molusco bloqueando patrick
+
+ MATCH (lula:Client{name:"Lula Molusco"}), (patrick:Client{name: "Patrick"}) CREATE (lula)[:Bloqueado]->(patrick)
+
+deletando o relacionamento de bloqueio
+MATCH (lula:Client{name:"Lula Molusco"}) -[relaciona:Bloqueado]- () DELETE relaciona
+
+excluindo um nó:
+MATCH(lula:Client{name:"Lula Molusco"}) DELETE lula;
+
+atualizando um nó
+MATCH (patrick:Client{name:"patrick"}) SET patrick.hobbies = ['Caçar água-viva'];
+
+
+- Orientado a colunas (o que mais parece com o SQL):
+Nos bancos de dados de colunas, os dados são armazenadado dentro das colunas
+independentemente.
+
+Alguns conceitos: Keyspace (grupo de colunas = database)
+		Coluna Family(familia de colunas = table)
+		Row Key (chave que representa uma linha na coluna = Primary key)
+		Column (valor que tem Nome, Value e Timestamp.
+
+ideal para ser usado para registrar transações.
+
+
+- Baseados em Chave-Valor: Armazena dados complexo e simples e são identificados
+por um Id único. Ideal pra aplicações em núvem, para cache, carrinhos de compra
+e sessão de usuário. 
+
+PRATICA no Redis:
+ex de registro: SET user1:name "bob Esponja"
+
+para consultar: GET user1:name
+
+Criando um registro que tem expiração de 10s:
+SET user2:name "lula molusco" EX 10
+
+Verificação de chave: EXISTS user1:name
+
+Inserindo dado na lista: LPUSH user1:hobbies "caçar água viva" - retorna o índice 1
+
+para acessar o dado -> pelo índice LINDEX user1:hobbies 0 - renorna o conteúdo.
+
+para descobrir o tipo do dado: type user1:name - retorna String.
+
+descobrindo o tempo de expiração : TTL user1:name  - retorna -1
+
+- Orientado a documento: o docoumento é um dados, utiliza JSON, XML e outros. ex: MongoDB
+
+
+Introdução ao MONGO DB
+Schema free, suporta indices, tem bastante comandos de consultas
+
+Conceitos
+Document = tupla(registro)
+Collection = Tabela
+Embedding/liking = Join
+
+Ideal para grande volume de dados, sem necessariamente serem estruturados.
+
+Quando não usar: quando é necessário relacionamentos, e propriedades ACID.
+
+Schema Desing:
+Embedding -> documentos autocontidos
+usa-se só uma query.
+Referência -> Documento quet tem dependencia com documentos ou collection
+
+Boas práticas:
+- Evitar documentos grandes
+- Usar nomes pequenos e objetivos
+- Analisar queries utilizando explain()
+- Atualizar apenas informações relevantes
+
+BSON é uma codficação binária que parecem o JSON e tem tipos de dados.
+
+
+
+
+ 

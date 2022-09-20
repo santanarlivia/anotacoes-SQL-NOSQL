@@ -1,0 +1,36 @@
+Case Statement - troca de valores que depende 
+da condição  estabelecida.
+
+ Case-When-Then-End 
+
+Utilizando JOIN para unir várias tabelas
+
+SELECT pt.name, p.product_cd, p.name
+FROM product p CROSS JOIN product_type pt;
+
+O que é Inner JOIN? combina os registros de duas 
+tabelas diferentes.
+Se o valor estiver em uma tabela e não tiver
+na outra, dá falha e apaga essa linha.
+
+quando temos atributos de junção tem o
+mesmo nome podes-e usar USING, mas 
+geralmente se usa ON
+
+agrupaento de 3 ou + tabelas com JOin
+
+precisa ter dois joins e espeficar os
+atributos de junção de cada join e duas
+subcláusulas.
+
+é possível forçar uma ordem do join usando
+o comando STRAIGHT_JOIN
+
+OUTER JOIN
+usa-se quando a gente precisa
+resgatar um atributo que não
+está contido dentro de uma tabela e da outra
+
+SELECT listadeatibutos
+FROM tabela1 ft OUTERJOIN
+

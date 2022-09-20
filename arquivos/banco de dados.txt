@@ -1,0 +1,25 @@
+entidades são a mesma coisa que objetos
+existem atributos relacionados a entidades
+Atributos: são as caracteristicas da entidades
+tipos de atributos:
+atômico: não varia, ex: ssn
+composto: características concatenadas
+ex: nome e endereço
+ multivalorados: intervalo de infomações possíveis
+ex: cores 
+derivados: informações que se atualizam por meio de outro
+ex: idade>data de nascimento
+  Nulo: é opcional
+
+um conjunto de entidades é uma instancia
+
+ENTIDADE FRACA
+é quando existe uma dependecia entre uma
+entidade e outra
+
+ENTIDADE FORTE
+
+
+Constrains
+1- cardinalidade
+número máximo de instâncias em um relacioamento
